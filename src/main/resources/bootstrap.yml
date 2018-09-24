@@ -11,3 +11,6 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka/ #设置eureka服务器所在的地址，查询服务和注册服务都需要依赖这个地址
   server:
     eviction-interval-timer-in-ms: 5000 # 驱逐下线的服务，间隔,5秒，默认是60
+logging:
+  file: /home/log/eureka-server.log
+  level: info
