@@ -3,7 +3,6 @@ services:
   eureka-server:
     environment:
       CONFIG_LOGIN_PWD: $CONFIG_LOGIN_PWD
-    #build: ./
     image: itmabo/eureka-server
     volumes:
       - /home/log:/home/log
