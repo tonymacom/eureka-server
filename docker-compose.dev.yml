@@ -2,14 +2,14 @@ version: "3"
 services:
   eureka-server:
     environment:
-      CONFIG_LOGIN_PWD: $CONFIG_LOGIN_PWD
+      CONFIG_LOGIN_PWD: 12345
     image: itmabo/eureka-server
     volumes:
       - /home/log:/home/log
     prots:
       - 8761:8761
-    networks:
-      - tonynet-a
+#    networks:
+#      - tonynet-a
     deploy:
       placement:
         constraints: [node.role==manager]
@@ -24,7 +24,8 @@ services:
 #    deploy:
 #      placement:
 #        constraints: [node.role==manager]
-networks:
-  tonynet-a:
-    external:
-      name: tonynet
+
+#networks:
+#  tonynet-a:
+#    external:
+#      name: tonynet

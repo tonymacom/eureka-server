@@ -14,3 +14,10 @@ eureka:
 logging:
   file: /home/log/eureka-server.log
   level: info
+info:
+  app:
+    name: eureka-server # /info数据
+    version: 1.0
+management:
+  security:
+    enabled: false # 关闭安全校验,可以获取 /env /beans接口数据
