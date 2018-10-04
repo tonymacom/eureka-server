@@ -8,12 +8,12 @@ services:
       - /home/log:/home/log
     ports:
       - 8761:8761
-#    networks:
-#      - tonynet-a
+    networks:
+      - tonynet-a
     deploy:
       placement:
         constraints: [node.role==manager]
-#networks:
-#  tonynet-a:
-#    external:
-#      name: tonynet
+networks:
+  tonynet-a:
+    external:
+      name: tonynet
