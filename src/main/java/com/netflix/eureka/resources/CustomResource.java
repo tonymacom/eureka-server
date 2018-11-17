@@ -30,7 +30,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 /**
- * 自定义upgrade端点, 用于关闭一次eureka自我保护机制.
+ * 自定义upgrade端点, 用于eureka自我保护机制阈值恢复正常水平.
  * @author www.yamibuy.com
  *
  */
@@ -62,7 +62,7 @@ public class CustomResource {
     }
 
     /**
-     * 手动释放eureka自我保护
+     * 恢复eureka自我保护机制阈值到正常水平
      *
      * expectedNumberOfRenewsPerMin值与numberOfRenewsPerMinThreshold 值变更规律:
      *
