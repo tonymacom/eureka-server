@@ -1,0 +1,36 @@
+version: "3"
+services:
+  eureka-server:
+    environment:
+      CONFIG_LOGIN_PWD: 12345
+      LOGFILE_NAME: eureka-server
+      EUREKA_SERVER_DEFAULTZONE: eureka-server-backup
+    image: itmabo/eureka-server
+    volumes:
+      - /home/log:/home/log
+    ports:
+      - 8761:8761
+    networks:
+      - tonynet-a
+    deploy:
+      placement:
+        constraints: [node.role==manager]
+  eureka-server-backup:
+    environment:
+      CONFIG_LOGIN_PWD: 12345
+      LOGFILE_NAME: eureka-server-backup
+      EUREKA_SERVER_DEFAULTZONE: eureka-server
+    image: itmabo/eureka-server
+    volumes:
+    - /home/log:/home/log
+    ports:
+    - 8762:8761
+    networks:
+    - tonynet-a
+    deploy:
+      placement:
+        constraints: [node.role==manager]
+networks:
+  tonynet-a:
+    external:
+      name: tonynet
